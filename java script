@@ -1,0 +1,70 @@
+var diceimage = document.querySelector('.dice-image');
+var score = 0 ;
+var total = [0,0];
+var playArea = 1 ; 
+var gameStop = true ; 
+
+document.querySelector('.New-Btn').addEventListener("click",Newgame)
+function Newgame () {
+	playArea = 1 ; 
+	gameStop = true ;
+    total = [0,0];
+	score = 0 ;
+
+	document.getElementById('Score-1').textContent=0 ;
+	document.querySelector('.Current-1').textContent=0 ;
+	document.getElementById('Score-2').textContent=0 ;
+	document.querySelector('.Current-2').textContent=0 ;
+	document.querySelector('.dice-image').style.display = 'none' ; 
+}
+document.querySelector('.Roll-Btn').addEventListener('click',Roll)
+function Roll () {
+var  x = (Math.floor(Math.random()*6)+1)
+score +=x 
+diceimage.src = "dice-"+x+".png"
+document.querySelector('.dice-image').style.display = 'block' ;
+document.querySelector('.Current-' +playArea ).textContent = score;
+if (x === 1 ){
+	document.querySelector('.Current-' +playArea ).textContent = score = 0;
+	document.querySelector('.dice-image').style.display = 'none' ; 
+	 document.getElementById('Player1').classList.toggle('active');
+	document.getElementById('Player2').classList.toggle('active');
+if (playArea === 1){
+	playArea = 2 ; 
+}
+else {
+	playArea = 1
+}
+}
+}
+document.querySelector('.Hold-Btn').addEventListener('click',Hold)
+function Hold ()
+ {
+	if (gameStop === true){
+		total[playArea-1] += score 
+	document.getElementById('Score-' +playArea ).textContent = total[playArea-1]}
+		if (document.getElementById('Score-'+playArea).textContent >= 20){
+			document.getElementById('name-'+playArea).textContent = 'Winner' ;
+            document.querySelector('.dice-image').style.display = 'none' ; 
+            gameStop = false;
+		}
+		else {
+			document.querySelector('.Current-'+playArea).textContent=0;
+                score=0;
+				if(playArea === 1)
+                {
+                    playArea = 2;
+                }
+                else{
+                    playArea = 1;
+                }
+                document.getElementById('Player1').classList.toggle('active');
+                document.getElementById('Player2').classList.toggle('active');
+            }
+		}
+	
+	
+	
+	
+
+
