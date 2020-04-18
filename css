@@ -1,0 +1,158 @@
+/*Main Classes*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+body{
+    background-image:linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)),
+    url('back.jpg');
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+.countaner{
+    position: absolute;
+    height: 620px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    top: 50%;
+}
+/****Playing Area***
+*******************/
+.Main-Area{
+	border-radius: 15px 50px;
+   
+    position: absolute;
+    height: 450px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(247, 247, 247);
+    width: 800px;
+    top: 50%;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.3);
+}
+/****Sections****
+****************/
+#Player1,#Player2{
+	border-radius: 15px ;
+    float: left;
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    padding: 100px;
+}
+#Player1 .Player-1-name,
+#Player2 .Player-2-name{
+    margin-top: 18px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+/*Up*/
+#Player1 .Player-1-score,
+#Player2 .Player-2-score{
+    margin-top: 10px;
+    font-size: 50;
+    font-weight: 100;
+    color: #eb4d4d;
+}
+/*Down*/
+.count{
+	border: 2px solid block;
+    border-radius: 12px;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px 50px 10px 50px;
+    background-color: #eb4d4d;
+	
+}
+#Player1 .count .Current-1,
+#Player2 .count .Current-2{
+    
+    color: white;
+    font-size: 25px;
+}
+#Player1 .count  > span,
+#Player2 .count > span{
+    color: black;
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+/******
+Buttons***
+*********/
+.button{
+	border: 2px solid red;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 20px;
+    background: none;
+    width: 200px;
+    color: #eb4d4d;
+    transition: 0.3s;
+    cursor: pointer;
+    transition: font-weight 0.1s;
+}
+.button img{
+    width: 30px;
+    height: auto;
+    vertical-align: -9px;
+    margin-right: 5px;
+    transition: margin 0.2s;
+}
+.button:hover{font-weight: bold;}
+.button span:hover{margin-left: 10px;}
+button:focus{outline: none;}
+/*new Game*/
+.New-Btn{top: -400px;left:300px;}
+/*Roll Now*/
+.Roll-Btn{bottom:180px;left:300px;}
+/*Hold*/
+.Hold-Btn{bottom:160px;left:300px;}
+/*Dice Game Image*/
+.dice-image{
+    position: relative;
+    display: block;
+    width: 90px ;
+    height: auto;
+    left: 350px ;
+    top: -380px;
+    box-shadow: 10px 10px 40px rgba(99, 99, 99, 0.205);
+	border: 2px solid black;
+    border-radius: 12px;
+}
+.active{
+    background-color: rgb(226, 226, 226);
+}
+.active #name-1::after,
+.active #name-2::after{
+content: url(dot.png);
+position:absolute;
+top:121px;
+margin-left:5px;
+}
+
+.p{
+    position: absolute;
+    left: 50%;
+    top: 89%;
+    color: white;
+    letter-spacing: 3px;
+    transform: translate(-50%, -50%);
+}
+.name {
+	position:absolute;
+	left: 33%;
+	top : 8% ;
+	color : #eb4d4d;
+}
